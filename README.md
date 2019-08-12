@@ -1,5 +1,6 @@
 # Crazy-Taxi-Drive-2D
 
+
 2D RACING GAME – CRAZY TAXI RIDE  
 Contents of the game:  
 CAR – WHEELS (rotations are already made, need to see the interaction with the terrain how adaptable is it), BODY PART (will move according to the suspension effect of the car, therefore will need to make it as natural as possible), STEARING WHEEL (will be static, no need to edit it), EXHAUST PIPE WITH SMOKE (starts smoking only when player starts the engine with W. More smoke on the exhaust pipe when player presses accelerates with W. Less smoke from the pipe when player only breaks or just stays with the engine running), HEADLIGHTS (must light when starting the engine. Starting the engine will be made with W), DRIVER (only the head, to be moved when climbing and stuff according to the proper law of physics. When the head will hit the floor, the game restarts at the last checkpoint). Human character to be taken with the taxi.  
