@@ -92,7 +92,8 @@ public class CarController : MonoBehaviour
     {
         if (other.gameObject.tag == "Fuel")
         {
-            Destroy(other.gameObject);
+            Fuel fuelComp = other.gameObject.GetComponent<Fuel>();
+            StartCoroutine(fuelComp.OnDestroyHandler());
             Debug.Log("We got fuel");
         }
     }

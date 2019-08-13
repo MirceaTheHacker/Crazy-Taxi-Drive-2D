@@ -8,9 +8,11 @@ public class Fuel : MonoBehaviour
     public float m_FloatingFrequency = 2f;
     public float m_EulerAngleAngleVelocity = 10;
     public float m_SpawnDistanceFromGround = 1f;
+    public AudioSource m_CollectibleAudioSource;
 
     private Rigidbody2D m_Rigidody2D;
     private Transform m_InitialPosition;
+    private SpriteRenderer m_Renderer { get { return GetComponent<SpriteRenderer>(); } }
 
     private void Awake()
     {
@@ -65,5 +67,16 @@ public class Fuel : MonoBehaviour
     private RaycastHit2D Raycast()
     {
         return Physics2D.Raycast(gameObject.transform.position, Vector2.down, Mathf.Infinity, LayerMask.GetMask("Ground", "Lava"));
+    }
+
+    internal IEnumerator OnDestroyHandler()
+    {
+        m_Renderer.enabled = false;
+        m_CollectibleAudioSource.Play();
+        while (m_CollectibleAudioSource.isPlaying)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+        Destroy(gameObject);
     }
 }
