@@ -13,12 +13,13 @@ public class CarController : MonoBehaviour
     public float torqueB;
     public bool TractionFront = true;
     public bool TractionBack = true;
-    public float carRotationSpeed;
+    //public float carRotationSpeed;
     public float fuelConsumption = 0.02f;
+
+    internal float m_Fuel = 1f;
 
     private Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
     private float movement;
-    private float fuel = 1f;
     JointMotor2D motorFront;
     JointMotor2D motorBack;
     private FuelManager m_FuelManager;
@@ -30,8 +31,9 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
-        if (fuel < 0)
+        if (m_Fuel < 0)
         {
+            movement = 0;
             OutOfFuel();
             return;
         }
@@ -98,8 +100,8 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        fuel -= fuelConsumption * Mathf.Abs(movement) * Time.fixedDeltaTime;
-        m_FuelManager.m_Image.fillAmount = fuel;
+        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * Time.fixedDeltaTime;
+        m_FuelManager.m_Image.fillAmount = m_Fuel;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -108,16 +110,13 @@ public class CarController : MonoBehaviour
         {
             FuelCollectable fuelComp = other.gameObject.GetComponent<FuelCollectable>();
             StartCoroutine(fuelComp.OnDestroyHandler());
-            fuel = 1;
+            m_Fuel = 1;
         }
     }
 
     private void OutOfFuel()
     {
-        motorFront.motorSpeed = 0;
-        motorBack.motorSpeed = 0;
-        frontwheel.motor = motorFront;
-        backwheel.motor = motorBack;
-
+        backwheel.useMotor = false;
+        frontwheel.useMotor = false;
     }
 }
