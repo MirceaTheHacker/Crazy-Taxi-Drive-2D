@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 669416557}
   - component: {fileID: 669416558}
   - component: {fileID: 3473591187750543056}
-  - component: {fileID: 7897358177024527079}
+  - component: {fileID: 669416559}
   m_Layer: 0
   m_Name: mainCharacter
   m_TagString: Untagged
@@ -97,7 +97,7 @@ CapsuleCollider2D:
   m_Offset: {x: -1.1570523, y: 1.1886972}
   m_Size: {x: 2.09322, y: 3.6147013}
   m_Direction: 0
---- !u!114 &7897358177024527079
+--- !u!114 &669416559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

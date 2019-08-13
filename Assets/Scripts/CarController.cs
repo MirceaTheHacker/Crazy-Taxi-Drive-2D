@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class carController : MonoBehaviour
+public class CarController : MonoBehaviour
 {
 
     public WheelJoint2D frontwheel;
@@ -90,8 +90,17 @@ public class carController : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
 
-            GetComponent<Rigidbody2D>().AddTorque(carRotationSpeed * Input.GetAxisRaw("Horizontal") * -1);
+            m_Rigidbody2d.AddTorque(carRotationSpeed * Input.GetAxisRaw("Horizontal") * -1);
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Fuel")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("We got fuel");
         }
     }
 
@@ -100,5 +109,6 @@ public class carController : MonoBehaviour
         gameObject.transform.position = checkpoint;
         gameObject.transform.rotation = Quaternion.identity;
         m_Rigidbody2d.velocity = Vector3.zero;
+        m_Rigidbody2d.angularVelocity = 0;
     }
 }
