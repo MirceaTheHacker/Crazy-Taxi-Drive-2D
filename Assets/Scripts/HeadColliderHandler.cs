@@ -16,7 +16,6 @@ public class HeadColliderHandler : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
-            Debug.Log("Dead");
             m_CarClass.Respawn(m_CheckPoint);
         }
     }

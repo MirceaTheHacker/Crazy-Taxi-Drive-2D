@@ -24,12 +24,28 @@ public class CarController : MonoBehaviour
 
     public float carRotationSpeed;
 
+    public float maxFuel = 100f;
+    public float fuelConsumption = 20f;
+
     private Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
+    private float movement;
+    private float fuel;
+
+    private void Awake()
+    {
+        fuel = maxFuel;
+    }
 
     void Update()
     {
+        if (fuel < 0)
+        {
+            OutOfFuel();
+            return;
+        }
+        movement = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetAxisRaw("Vertical") > 0)
+        if (movement > 0)
         {
 
 
@@ -49,7 +65,7 @@ public class CarController : MonoBehaviour
             }
 
         }
-        else if (Input.GetAxisRaw("Vertical") < 0)
+        else if (movement < 0)
         {
 
 
@@ -80,12 +96,18 @@ public class CarController : MonoBehaviour
 
 
 
-        if (Input.GetAxisRaw("Horizontal") != 0)
-        {
+        // if (Input.GetAxisRaw("Horizontal") != 0)
+        // {
 
-            m_Rigidbody2d.AddTorque(carRotationSpeed * Input.GetAxisRaw("Horizontal") * -1);
+        //     m_Rigidbody2d.AddTorque(carRotationSpeed * Input.GetAxisRaw("Horizontal") * -1);
 
-        }
+        // }
+    }
+
+    private void FixedUpdate()
+    {
+        fuel -= fuelConsumption * Mathf.Abs(movement) * Time.fixedDeltaTime;
+        UIMainGasBar.instance.SetValue(fuel);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -94,7 +116,16 @@ public class CarController : MonoBehaviour
         {
             Fuel fuelComp = other.gameObject.GetComponent<Fuel>();
             StartCoroutine(fuelComp.OnDestroyHandler());
-            Debug.Log("We got fuel");
+            fuel = maxFuel;
         }
+    }
+
+    private void OutOfFuel()
+    {
+        motorFront.motorSpeed = 0;
+        motorBack.motorSpeed = 0;
+        frontwheel.motor = motorFront;
+        backwheel.motor = motorBack;
+
     }
 }
