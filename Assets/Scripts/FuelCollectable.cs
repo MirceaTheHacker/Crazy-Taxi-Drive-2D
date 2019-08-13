@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fuel : MonoBehaviour
+public class FuelCollectable : MonoBehaviour
 {
     public float m_FloatingVellocity;
     public float m_FloatingFrequency = 2f;

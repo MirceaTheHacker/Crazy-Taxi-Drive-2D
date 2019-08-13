@@ -321,6 +321,8 @@ MonoBehaviour:
   TractionFront: 1
   TractionBack: 1
   carRotationSpeed: 50
+  fuelConsumption: 0.2
+  m_FuelImage: {fileID: 0}
 --- !u!70 &199981364
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

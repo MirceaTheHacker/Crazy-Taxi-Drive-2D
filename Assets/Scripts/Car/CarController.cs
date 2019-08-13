@@ -1,39 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
 
     public WheelJoint2D frontwheel;
     public WheelJoint2D backwheel;
-
-    JointMotor2D motorFront;
-
-    JointMotor2D motorBack;
-
     public float speedF;
     public float speedB;
-
     public float torqueF;
     public float torqueB;
-
-
     public bool TractionFront = true;
     public bool TractionBack = true;
-
-
     public float carRotationSpeed;
-
-    public float maxFuel = 100f;
-    public float fuelConsumption = 20f;
+    public float fuelConsumption = 0.02f;
 
     private Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
     private float movement;
-    private float fuel;
+    private float fuel = 1f;
+    JointMotor2D motorFront;
+    JointMotor2D motorBack;
+    private FuelManager m_FuelManager;
 
-    private void Awake()
+    private void Start()
     {
-        fuel = maxFuel;
+        m_FuelManager = GameManager.Instance.m_FuelManager;
     }
 
     void Update()
@@ -107,16 +99,16 @@ public class CarController : MonoBehaviour
     private void FixedUpdate()
     {
         fuel -= fuelConsumption * Mathf.Abs(movement) * Time.fixedDeltaTime;
-        UIMainGasBar.instance.SetValue(fuel);
+        m_FuelManager.m_Image.fillAmount = fuel;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Fuel")
         {
-            Fuel fuelComp = other.gameObject.GetComponent<Fuel>();
+            FuelCollectable fuelComp = other.gameObject.GetComponent<FuelCollectable>();
             StartCoroutine(fuelComp.OnDestroyHandler());
-            fuel = maxFuel;
+            fuel = 1;
         }
     }
 
