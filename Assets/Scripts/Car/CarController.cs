@@ -26,13 +26,6 @@ public class CarController : MonoBehaviour
 
     private Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
