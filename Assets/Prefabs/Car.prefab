@@ -155,9 +155,10 @@ GameObject:
   - component: {fileID: 7328784716589837052}
   - component: {fileID: 7328784716589837054}
   - component: {fileID: 199981364}
+  - component: {fileID: 6791263891350127166}
   m_Layer: 0
   m_Name: carBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,6 +335,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.11253843, y: -0.35791737}
   m_Size: {x: 6.7745566, y: 1.1360661}
   m_Direction: 1
+--- !u!114 &6791263891350127166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328784716589837047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cad59be9fa650b4ba8be222e73c60ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7328784716994749133
 GameObject:
   m_ObjectHideFlags: 0

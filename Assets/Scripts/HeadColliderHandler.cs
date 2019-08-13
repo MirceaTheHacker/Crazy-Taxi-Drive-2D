@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class HeadColliderHandler : MonoBehaviour
 {
-    private Vector2 m_CheckPoint;
-    private CarController m_CarClass;
+    internal Vector2 m_CheckPoint;
+    private CarRespawn m_CarClass;
 
     private void Start()
     {
-        m_CheckPoint = gameObject.transform.position;
-        m_CarClass = GetComponentInParent<CarController>();
+        m_CarClass = GetComponentInParent<CarRespawn>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
