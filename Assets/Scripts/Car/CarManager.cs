@@ -12,6 +12,7 @@ public class CarManager : MonoBehaviour
     internal CarController m_CarController { get { return GetComponentInChildren<CarController>(); } }
 
     private Rigidbody2D[] m_Rigidbodies2D { get { return GetComponentsInChildren<Rigidbody2D>(); } }
+    private bool isAlive = true;
 
     private void Start()
     {
@@ -30,20 +31,23 @@ public class CarManager : MonoBehaviour
 
     private void Update()
     {
-        if (curHealth <= 0)
-        {
-            DeathHandler();
-        }
         CheckIfFellOff();
     }
 
     internal void Respawn()
     {
+        DamagePlayer(1);
+        if (curHealth <= 0)
+        {
+            DeathHandler();
+            return;
+        }
         m_CarController.transform.position = m_CheckPoint;
         m_CarController.transform.rotation = Quaternion.identity;
         CancelVellocity();
         m_CarController.AddFuel(1);
-        DamagePlayer(1);
+        GameManager.Instance.m_SoundManager.PlayLoserSound();
+
     }
 
     private void CancelVellocity()
@@ -62,8 +66,13 @@ public class CarManager : MonoBehaviour
 
     private void DeathHandler()
     {
-        m_CarController.enabled = false;
-        StartCoroutine(GameManager.Instance.m_UIManager.GameOver());
+        if (isAlive)
+        {
+            isAlive = false;
+            m_CarController.enabled = false;
+            GameManager.Instance.GameOverHandler();
+        }
+
     }
 
 
@@ -86,7 +95,7 @@ public class CarManager : MonoBehaviour
 
     private void CheckIfFellOff()
     {
-        if (m_CarController.transform.position.y < -10)
+        if (m_CarController.transform.position.y < GameManager.Instance.m_RespawnLevel)
         {
             Respawn();
         }

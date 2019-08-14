@@ -9,6 +9,7 @@ public class Flag : MonoBehaviour
 
     private SpriteRenderer m_Renderer { get { return GetComponent<SpriteRenderer>(); } }
     private bool used = false;
+    private AudioSource m_AudioSource { get { return GetComponent<AudioSource>(); } }
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class Flag : MonoBehaviour
         if (other.tag == "Player")
         {
             used = true;
+            m_AudioSource.Play();
             m_Renderer.sprite = greenFlag;
             CarManager carManager =
             other.gameObject.GetComponentInParent<CarManager>();
