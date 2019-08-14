@@ -7934,7 +7934,7 @@ PrefabInstance:
     - target: {fileID: 6291651727955857741, guid: df5d18c2ebc9e524d8671afa1b741e02,
         type: 3}
       propertyPath: curHealth
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5d18c2ebc9e524d8671afa1b741e02, type: 3}
