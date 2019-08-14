@@ -72,7 +72,7 @@ public class FuelCollectable : MonoBehaviour
 
     internal IEnumerator OnDestroyHandler()
     {
-        GameManager.Instance.m_CarController.m_Fuel = 1;
+        GameManager.Instance.m_CarManager.m_CarController.m_Fuel = 1;
         m_Renderer.enabled = false;
         m_CollectibleAudioSource.Play();
         m_BoxCollider2d.enabled = false;

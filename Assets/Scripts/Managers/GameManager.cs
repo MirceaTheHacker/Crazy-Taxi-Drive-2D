@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     internal FuelManager m_FuelManager;
-    internal CarController m_CarController;
+    internal CarManager m_CarManager;
+    internal HealthManager m_HealthManager;
 
     private void Awake()
     {
@@ -20,5 +21,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+
 
 }

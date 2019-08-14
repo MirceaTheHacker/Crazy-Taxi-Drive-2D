@@ -16,6 +16,8 @@ public class CarController : MonoBehaviour
     //public float carRotationSpeed;
     public float fuelConsumption = 0.02f;
     public float nitroMultiplier = 2f;
+    public int maxHealth;
+    public int curHealth;
 
     internal float m_Fuel = 1f;
 
@@ -27,7 +29,16 @@ public class CarController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.m_CarController = this;
+        StartCoroutine(HealthSetup());
+    }
+
+    private IEnumerator HealthSetup()
+    {
+        GameManager.Instance.m_HealthManager = GameManager.Instance.GetComponentInChildren<HealthManager>();
+        yield return new WaitForFixedUpdate();
+        GameManager.Instance.m_HealthManager.maxHealth = maxHealth;
+        GameManager.Instance.m_HealthManager.curHealth = curHealth;
+        GameManager.Instance.m_HealthManager.InitializeHarts();
     }
 
     void Update()

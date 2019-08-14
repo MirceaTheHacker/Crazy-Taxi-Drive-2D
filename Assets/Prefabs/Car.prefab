@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 669416558}
   - component: {fileID: 3473591187750543056}
   - component: {fileID: 669416559}
+  - component: {fileID: 117844210}
+  - component: {fileID: 117844209}
   m_Layer: 0
   m_Name: mainCharacter
   m_TagString: Player
@@ -109,6 +111,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba692531df935e45b8b2aaeb93208ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &117844210
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669416556}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!233 &117844209
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669416556}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 7328784716589837040}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: -0.000000057037823, y: 0.0000004253459}
+  m_ConnectedAnchor: {x: 0.2819787, y: 0.30599955}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 1
+  m_AngleLimits:
+    m_LowerAngle: -30
+    m_UpperAngle: 30
 --- !u!1 &7328784715585335064
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7328784715585335065}
+  - component: {fileID: 6291651727955857741}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -140,6 +188,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6291651727955857741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328784715585335064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32abedfede06954a9f7a4649d7d9a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7328784716589837047
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +382,8 @@ MonoBehaviour:
   TractionBack: 1
   fuelConsumption: 0.2
   nitroMultiplier: 2
+  maxHealth: 5
+  curHealth: 5
 --- !u!70 &199981364
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class HeadColliderHandler : MonoBehaviour
     private void Start()
     {
         m_CarClass = GetComponentInParent<CarRespawn>();
+        m_CheckPoint = gameObject.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
