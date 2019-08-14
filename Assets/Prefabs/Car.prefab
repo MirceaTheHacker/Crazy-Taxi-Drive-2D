@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 669416559}
   m_Layer: 0
   m_Name: mainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -320,9 +320,8 @@ MonoBehaviour:
   torqueB: 5000
   TractionFront: 1
   TractionBack: 1
-  carRotationSpeed: 50
   fuelConsumption: 0.2
-  m_FuelImage: {fileID: 0}
+  nitroMultiplier: 2
 --- !u!70 &199981364
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -365,7 +364,7 @@ GameObject:
   - component: {fileID: 7328784716994749134}
   m_Layer: 0
   m_Name: backwheel
-  m_TagString: Untagged
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +483,7 @@ GameObject:
   - component: {fileID: 7328784717147905242}
   m_Layer: 0
   m_Name: FRONT WHEEL
-  m_TagString: Untagged
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

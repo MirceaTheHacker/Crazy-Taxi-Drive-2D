@@ -13,6 +13,7 @@ public class FuelCollectable : MonoBehaviour
     private Rigidbody2D m_Rigidody2D;
     private Transform m_InitialPosition;
     private SpriteRenderer m_Renderer { get { return GetComponent<SpriteRenderer>(); } }
+    private BoxCollider2D m_BoxCollider2d { get { return GetComponent<BoxCollider2D>(); } }
 
     private void Awake()
     {
@@ -71,12 +72,32 @@ public class FuelCollectable : MonoBehaviour
 
     internal IEnumerator OnDestroyHandler()
     {
+        GameManager.Instance.m_CarController.m_Fuel = 1;
         m_Renderer.enabled = false;
         m_CollectibleAudioSource.Play();
+        m_BoxCollider2d.enabled = false;
         while (m_CollectibleAudioSource.isPlaying)
         {
             yield return new WaitForFixedUpdate();
         }
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Wheel")
+        {
+            StartCoroutine(OnDestroyHandler());
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Player" || other.collider.tag == "Wheel")
+        {
+            StartCoroutine(OnDestroyHandler());
+
+        }
+    }
+
 }

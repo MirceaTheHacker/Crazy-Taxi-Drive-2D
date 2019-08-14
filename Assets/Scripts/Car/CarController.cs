@@ -15,6 +15,7 @@ public class CarController : MonoBehaviour
     public bool TractionBack = true;
     //public float carRotationSpeed;
     public float fuelConsumption = 0.02f;
+    public float nitroMultiplier = 2f;
 
     internal float m_Fuel = 1f;
 
@@ -22,11 +23,11 @@ public class CarController : MonoBehaviour
     private float movement;
     JointMotor2D motorFront;
     JointMotor2D motorBack;
-    private FuelManager m_FuelManager;
+    private float currentNitroMultiplier;
 
     private void Start()
     {
-        m_FuelManager = GameManager.Instance.m_FuelManager;
+        GameManager.Instance.m_CarController = this;
     }
 
     void Update()
@@ -38,6 +39,7 @@ public class CarController : MonoBehaviour
             return;
         }
         movement = Input.GetAxisRaw("Vertical");
+        NitroCheck();
 
         if (movement > 0)
         {
@@ -45,14 +47,14 @@ public class CarController : MonoBehaviour
 
             if (TractionFront)
             {
-                motorFront.motorSpeed = speedF * -1;
+                motorFront.motorSpeed = speedF * currentNitroMultiplier * -1;
                 motorFront.maxMotorTorque = torqueF;
                 frontwheel.motor = motorFront;
             }
 
             if (TractionBack)
             {
-                motorBack.motorSpeed = speedF * -1;
+                motorBack.motorSpeed = speedF * currentNitroMultiplier * -1;
                 motorBack.maxMotorTorque = torqueF;
                 backwheel.motor = motorBack;
 
@@ -65,14 +67,14 @@ public class CarController : MonoBehaviour
 
             if (TractionFront)
             {
-                motorFront.motorSpeed = speedB * -1;
+                motorFront.motorSpeed = speedB * currentNitroMultiplier * -1;
                 motorFront.maxMotorTorque = torqueB;
                 frontwheel.motor = motorFront;
             }
 
             if (TractionBack)
             {
-                motorBack.motorSpeed = speedB * -1;
+                motorBack.motorSpeed = speedB * currentNitroMultiplier * -1;
                 motorBack.maxMotorTorque = torqueB;
                 backwheel.motor = motorBack;
 
@@ -100,17 +102,19 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * Time.fixedDeltaTime;
-        m_FuelManager.m_Image.fillAmount = m_Fuel;
+        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * currentNitroMultiplier * Time.fixedDeltaTime;
+        GameManager.Instance.m_FuelManager.m_Image.fillAmount = m_Fuel;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void NitroCheck()
     {
-        if (other.gameObject.tag == "Fuel")
+        if (Input.GetKey(KeyCode.N))
         {
-            FuelCollectable fuelComp = other.gameObject.GetComponent<FuelCollectable>();
-            StartCoroutine(fuelComp.OnDestroyHandler());
-            m_Fuel = 1;
+            currentNitroMultiplier = nitroMultiplier;
+        }
+        else
+        {
+            currentNitroMultiplier = 1f;
         }
     }
 

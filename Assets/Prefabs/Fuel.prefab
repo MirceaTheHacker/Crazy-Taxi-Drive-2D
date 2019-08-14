@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3439002353672769205}
   - component: {fileID: 3439002353672769204}
   - component: {fileID: 3439002353672769163}
-  - component: {fileID: 2625587677565853480}
   - component: {fileID: 5280670004707025286}
   - component: {fileID: 869451540492685506}
+  - component: {fileID: 1712157727}
   m_Layer: 0
   m_Name: Fuel
-  m_TagString: LootableKnive
+  m_TagString: Fuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,22 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 1
---- !u!70 &2625587677565853480
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3439002353672769162}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.004358351, y: -0.0025695562}
-  m_Size: {x: 0.088199735, y: 0.774807}
-  m_Direction: 0
 --- !u!114 &5280670004707025286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FloatingVellocity: 0
   m_FloatingFrequency: 2
-  m_EulerAngleAngleVelocity: 10
-  m_SpawnDistanceFromGround: 1
+  m_EulerAngleAngleVelocity: 1
+  m_SpawnDistanceFromGround: 2
   m_CollectibleAudioSource: {fileID: 869451540492685506}
 --- !u!82 &869451540492685506
 AudioSource:
@@ -234,3 +218,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1712157727
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3439002353672769162}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.021699667, y: -0.12295532}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6836505, y: 4.4647846}
+  m_EdgeRadius: 0
