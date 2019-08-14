@@ -8,6 +8,7 @@ public class Flag : MonoBehaviour
     public Sprite redFlag;
 
     private SpriteRenderer m_Renderer { get { return GetComponent<SpriteRenderer>(); } }
+    private bool used = false;
 
     private void Start()
     {
@@ -16,12 +17,15 @@ public class Flag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (used) return;
         if (other.tag == "Player")
         {
+            used = true;
             m_Renderer.sprite = greenFlag;
-            HeadColliderHandler headColliderHandler =
-            other.gameObject.GetComponentInChildren<HeadColliderHandler>();
-            headColliderHandler.m_CheckPoint = gameObject.transform.position;
+            CarManager carManager =
+            other.gameObject.GetComponentInParent<CarManager>();
+            carManager.m_CheckPoint = gameObject.transform.position;
+            carManager.m_CarController.AddFuel(0.5f);
         }
     }
 }

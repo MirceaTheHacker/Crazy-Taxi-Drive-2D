@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null;
     internal FuelManager m_FuelManager;
     internal CarManager m_CarManager;
-    internal HealthManager m_HealthManager;
+    internal UIManager m_UIManager;
 
     private void Awake()
     {

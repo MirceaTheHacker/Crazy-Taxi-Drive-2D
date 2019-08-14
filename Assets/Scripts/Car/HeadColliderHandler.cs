@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class HeadColliderHandler : MonoBehaviour
 {
-    internal Vector2 m_CheckPoint;
-    private CarRespawn m_CarClass;
 
-    private void Start()
-    {
-        m_CarClass = GetComponentInParent<CarRespawn>();
-        m_CheckPoint = gameObject.transform.position;
-    }
+    private CarManager m_CarManager { get { return GetComponentInParent<CarManager>(); } }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.tag == "Ground")
         {
-            m_CarClass.Respawn(m_CheckPoint);
+            m_CarManager.Respawn();
         }
     }
 }

@@ -16,39 +16,28 @@ public class CarController : MonoBehaviour
     //public float carRotationSpeed;
     public float fuelConsumption = 0.02f;
     public float nitroMultiplier = 2f;
-    public int maxHealth;
-    public int curHealth;
+
 
     internal float m_Fuel = 1f;
+    internal Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
 
-    private Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
     private float movement;
     JointMotor2D motorFront;
     JointMotor2D motorBack;
     private float currentNitroMultiplier;
-
-    private void Start()
-    {
-        StartCoroutine(HealthSetup());
-    }
-
-    private IEnumerator HealthSetup()
-    {
-        GameManager.Instance.m_HealthManager = GameManager.Instance.GetComponentInChildren<HealthManager>();
-        yield return new WaitForFixedUpdate();
-        GameManager.Instance.m_HealthManager.maxHealth = maxHealth;
-        GameManager.Instance.m_HealthManager.curHealth = curHealth;
-        GameManager.Instance.m_HealthManager.InitializeHarts();
-    }
+    private CarManager m_CarManager { get { return GetComponentInParent<CarManager>(); } }
+    private bool m_OutOfFuel = false;
 
     void Update()
     {
         if (m_Fuel < 0)
         {
-            movement = 0;
-            OutOfFuel();
+            if (m_OutOfFuel) return;
+            m_OutOfFuel = true;
+            StartCoroutine(m_CarManager.OutOfFuelCoroutine());
             return;
         }
+
         movement = Input.GetAxisRaw("Vertical");
         NitroCheck();
 
@@ -100,14 +89,9 @@ public class CarController : MonoBehaviour
 
         }
 
-
-
-
         // if (Input.GetAxisRaw("Horizontal") != 0)
         // {
-
         //     m_Rigidbody2d.AddTorque(carRotationSpeed * Input.GetAxisRaw("Horizontal") * -1);
-
         // }
     }
 
@@ -133,5 +117,20 @@ public class CarController : MonoBehaviour
     {
         backwheel.useMotor = false;
         frontwheel.useMotor = false;
+    }
+
+    internal void AddFuel(float value)
+    {
+        m_Fuel += value;
+        if (m_Fuel > 1)
+        {
+            m_Fuel = 1;
+        }
+        m_OutOfFuel = false;
+    }
+
+    internal void CutMovement()
+    {
+        movement = 0;
     }
 }
