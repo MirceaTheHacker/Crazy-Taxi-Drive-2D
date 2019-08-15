@@ -60,7 +60,6 @@ public class CarManager : MonoBehaviour
 
     private void DamagePlayer(int damageValue)
     {
-        curHealth -= damageValue;
         m_HealthManager.UpdateHearts(damageValue);
     }
 

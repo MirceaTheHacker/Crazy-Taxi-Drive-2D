@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour
 {
@@ -20,11 +20,11 @@ public class CarController : MonoBehaviour
 
     internal float m_Fuel = 1f;
     internal Rigidbody2D m_Rigidbody2d { get { return GetComponent<Rigidbody2D>(); } }
+    internal float movement;
 
-    private float movement;
     JointMotor2D motorFront;
     JointMotor2D motorBack;
-    private float currentNitroMultiplier;
+    private float currentNitroMultiplier = 1f;
     private CarManager m_CarManager { get { return GetComponentInParent<CarManager>(); } }
     private bool m_OutOfFuel = false;
 
@@ -38,8 +38,8 @@ public class CarController : MonoBehaviour
             return;
         }
 
-        movement = Input.GetAxisRaw("Vertical");
-        NitroCheck();
+        //movement = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+        //NitroCheck();
 
         if (movement > 0)
         {
@@ -101,15 +101,37 @@ public class CarController : MonoBehaviour
         GameManager.Instance.m_FuelManager.m_Image.fillAmount = m_Fuel;
     }
 
-    private void NitroCheck()
+    // private void NitroCheck()
+    // {
+    //     if (Input.GetKey(KeyCode.N))
+    //     {
+    //         TurnNitroOn();
+    //     }
+    //     else
+    //     {
+    //         TurnNitroOff();
+    //     }
+    // }
+
+    private void TurnNitroOn()
     {
-        if (Input.GetKey(KeyCode.N))
+        currentNitroMultiplier = nitroMultiplier;
+    }
+
+    private void TurnNitroOff()
+    {
+        currentNitroMultiplier = 1f;
+    }
+
+    internal void NitroToggle()
+    {
+        if (currentNitroMultiplier == 1f)
         {
-            currentNitroMultiplier = nitroMultiplier;
+            TurnNitroOn();
         }
         else
         {
-            currentNitroMultiplier = 1f;
+            TurnNitroOff();
         }
     }
 
