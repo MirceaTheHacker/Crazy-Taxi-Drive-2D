@@ -11,7 +11,7 @@ public class CarSoundFX : MonoBehaviour
 
     void Update()
     {
-        if (!Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0) && m_CarController.m_Fuel > 0)
+        if (!Mathf.Approximately(m_CarController.movement, 0) && m_CarController.m_Fuel > 0)
         {
             if (!m_DrivingSound.isPlaying)
                 m_DrivingSound.Play();

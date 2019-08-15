@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     internal UIManager m_UIManager;
     internal float m_RespawnLevel;
     internal SoundManager m_SoundManager;
+    internal NitroHandler m_NitroHandler;
 
     private void Awake()
     {
@@ -28,6 +30,33 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(m_UIManager.GameOver());
         m_SoundManager.PlayGameOverSound();
+    }
+
+    internal void GameWinHandler()
+    {
+        m_UIManager.ShowGameWinUI();
+        m_SoundManager.PlayGameWinSound();
+        DisableCar();
+    }
+
+    private void DisableCar()
+    {
+        m_CarManager.StopCar();
+        m_CarManager.m_CarController.enabled = false;
+        m_CarManager.m_CarSoundFX.enabled = false;
+    }
+
+    public void PlayAgain()
+    {
+        m_NitroHandler.OnResetHandler();
+        m_UIManager.HideGameWinUI();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PlayCredits()
+    {
+        m_UIManager.HideGameWinUI();
+        StartCoroutine(m_UIManager.ShowCreditsUI());
     }
 
 

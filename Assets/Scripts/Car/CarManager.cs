@@ -10,6 +10,8 @@ public class CarManager : MonoBehaviour
     internal Vector2 m_CheckPoint;
     internal HealthManager m_HealthManager;
     internal CarController m_CarController { get { return GetComponentInChildren<CarController>(); } }
+    internal CarSoundFX m_CarSoundFX { get { return GetComponentInChildren<CarSoundFX>(); } }
+
 
     private Rigidbody2D[] m_Rigidbodies2D { get { return GetComponentsInChildren<Rigidbody2D>(); } }
     private bool isAlive = true;
@@ -77,9 +79,7 @@ public class CarManager : MonoBehaviour
 
     internal IEnumerator OutOfFuelCoroutine()
     {
-        m_CarController.CutMovement();
-        m_CarController.backwheel.useMotor = false;
-        m_CarController.frontwheel.useMotor = false;
+        StopCar();
         float direction = m_CarController.m_Rigidbody2d.velocity.x;
         while (m_CarController.m_Rigidbody2d.velocity.x * direction > 0)
         {
@@ -90,6 +90,13 @@ public class CarManager : MonoBehaviour
         {
             Respawn();
         }
+    }
+
+    internal void StopCar()
+    {
+        m_CarController.CutMovement();
+        m_CarController.backwheel.useMotor = false;
+        m_CarController.frontwheel.useMotor = false;
     }
 
     private void CheckIfFellOff()

@@ -27,6 +27,11 @@ public class CarController : MonoBehaviour
     private CarManager m_CarManager { get { return GetComponentInParent<CarManager>(); } }
     private bool m_OutOfFuel = false;
 
+    private void Start()
+    {
+        currentNitroMultiplier = 1f;
+    }
+
     void Update()
     {
         if (m_Fuel < 0)
@@ -36,9 +41,6 @@ public class CarController : MonoBehaviour
             StartCoroutine(m_CarManager.OutOfFuelCoroutine());
             return;
         }
-
-        //movement = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-        //NitroCheck();
 
         if (movement > 0)
         {
@@ -88,10 +90,6 @@ public class CarController : MonoBehaviour
 
         }
 
-        // if (Input.GetAxisRaw("Horizontal") != 0)
-        // {
-        //     m_Rigidbody2d.AddTorque(carRotationSpeed * Input.GetAxisRaw("Horizontal") * -1);
-        // }
     }
 
     private void FixedUpdate()
@@ -100,17 +98,6 @@ public class CarController : MonoBehaviour
         GameManager.Instance.m_FuelManager.m_Image.fillAmount = m_Fuel;
     }
 
-    // private void NitroCheck()
-    // {
-    //     if (Input.GetKey(KeyCode.N))
-    //     {
-    //         TurnNitroOn();
-    //     }
-    //     else
-    //     {
-    //         TurnNitroOff();
-    //     }
-    // }
 
     private void TurnNitroOn()
     {
