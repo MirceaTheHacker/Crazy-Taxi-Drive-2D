@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         m_GameOver.SetActive(true);
         yield return new WaitForSeconds(4);
         m_GameOver.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
     internal void ShowGameWinUI()

@@ -26,11 +26,12 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    internal void GameOverHandler()
+    internal IEnumerator GameOverHandler()
     {
-        StartCoroutine(m_UIManager.GameOver());
+
         m_SoundManager.PlayGameOverSound();
-        m_NitroHandler.OnLevelReset();
+        yield return StartCoroutine(m_UIManager.GameOver());
+        ReloadLevel();
     }
 
     internal void GameWinHandler()
@@ -52,13 +53,20 @@ public class GameManager : MonoBehaviour
     public void PlayAgain()
     {
         m_UIManager.HideGameWinUI();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ReloadLevel();
     }
 
     public void PlayCredits()
     {
         m_UIManager.HideGameWinUI();
         StartCoroutine(m_UIManager.ShowCreditsUI());
+    }
+
+
+    private void ReloadLevel()
+    {
+        m_NitroHandler.OnLevelReset();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

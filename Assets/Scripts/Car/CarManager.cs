@@ -72,7 +72,7 @@ public class CarManager : MonoBehaviour
         {
             isAlive = false;
             m_CarController.enabled = false;
-            GameManager.Instance.GameOverHandler();
+            StartCoroutine(GameManager.Instance.GameOverHandler());
         }
 
     }
