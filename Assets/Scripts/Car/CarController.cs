@@ -94,7 +94,7 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * currentNitroMultiplier * Time.fixedDeltaTime;
+        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * Mathf.Sqrt(currentNitroMultiplier) * Time.fixedDeltaTime;
         GameManager.Instance.m_FuelManager.m_Image.fillAmount = m_Fuel;
     }
 
