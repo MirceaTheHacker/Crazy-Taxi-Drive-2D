@@ -38,7 +38,7 @@ public class CarController : MonoBehaviour
         {
             if (m_OutOfFuel) return;
             m_OutOfFuel = true;
-            StartCoroutine(m_CarManager.OutOfFuelCoroutine());
+            m_CarManager.m_OutOfFuelCoroutine = StartCoroutine(m_CarManager.OutOfFuelCoroutine());
             return;
         }
 

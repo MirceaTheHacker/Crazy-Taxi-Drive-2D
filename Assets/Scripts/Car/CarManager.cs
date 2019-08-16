@@ -11,6 +11,7 @@ public class CarManager : MonoBehaviour
     internal HealthManager m_HealthManager;
     internal CarController m_CarController { get { return GetComponentInChildren<CarController>(); } }
     internal CarSoundFX m_CarSoundFX { get { return GetComponentInChildren<CarSoundFX>(); } }
+    internal Coroutine m_OutOfFuelCoroutine = null;
 
 
     private Rigidbody2D[] m_Rigidbodies2D { get { return GetComponentsInChildren<Rigidbody2D>(); } }
