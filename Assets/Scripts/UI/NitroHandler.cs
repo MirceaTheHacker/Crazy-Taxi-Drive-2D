@@ -21,6 +21,11 @@ public class NitroHandler : MonoBehaviour
         SetDisabledStyle();
     }
 
+    internal void OnLevelReset()
+    {
+        m_Toggle.isOn = false;
+    }
+
     public void NitroToggle()
     {
         if (m_Toggle.isOn)

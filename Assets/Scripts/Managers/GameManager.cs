@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(m_UIManager.GameOver());
         m_SoundManager.PlayGameOverSound();
+        m_NitroHandler.OnLevelReset();
     }
 
     internal void GameWinHandler()
