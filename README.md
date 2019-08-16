@@ -1,5 +1,7 @@
 # Crazy-Taxi-Drive-2D
 
+You can play the game at this link: 
+https://mateimircea.itch.io/crazy-taxi-drive
 
 # 2D RACING GAME – CRAZY TAXI RIDE  
 Contents of the game:  
