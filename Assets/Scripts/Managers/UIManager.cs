@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject m_ControlUI;
     public GameObject m_CreditsUI;
     public AnimationClip m_CreditsAnimation;
+    public AnimationClip m_FlipTextAnimation;
+    public GameObject m_FlipUI;
 
     private void Start()
     {
@@ -43,5 +46,12 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(m_CreditsAnimation.length);
         m_CreditsUI.SetActive(false);
         SceneManager.LoadScene(0);
+    }
+
+    internal IEnumerator DisplayFlip()
+    {
+        m_FlipUI.SetActive(true);
+        yield return new WaitForSeconds(m_FlipTextAnimation.length);
+        m_FlipUI.SetActive(false);
     }
 }

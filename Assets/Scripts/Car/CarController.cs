@@ -117,6 +117,8 @@ public class CarController : MonoBehaviour
 
     internal void AddFuel(float value)
     {
+        if (m_Fuel < 0)
+            m_Fuel = 0;
         m_Fuel += value;
         if (m_Fuel > 1)
         {
