@@ -2276,6 +2276,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 933551148856760525}
+    - target: {fileID: 3094907896038968986, guid: e26715bf8af8d244bb0a28b4b2b54676,
+        type: 3}
+      propertyPath: m_text
+      value: "Congratulations!\n You have finished the demo! :-)"
+      objectReference: {fileID: 0}
     - target: {fileID: 2436837717072893764, guid: e26715bf8af8d244bb0a28b4b2b54676,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
