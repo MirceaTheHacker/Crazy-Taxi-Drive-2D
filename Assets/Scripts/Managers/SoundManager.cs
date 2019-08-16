@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip m_GameWinClip;
     public AudioClip m_ClickClip;
     public AudioClip m_HoverClip;
+    public AudioClip m_FlipSoundClip;
 
     private AudioSource m_AudioSource { get { return GetComponent<AudioSource>(); } }
 
@@ -45,6 +46,11 @@ public class SoundManager : MonoBehaviour
     public void PlayHoverSound()
     {
         PlayOneShot(m_HoverClip);
+    }
+
+    public void PlayFlipSound()
+    {
+        PlayOneShot(m_FlipSoundClip);
     }
 
 }

@@ -51,6 +51,7 @@ public class UIManager : MonoBehaviour
     internal IEnumerator DisplayFlip()
     {
         m_FlipUI.SetActive(true);
+        GameManager.Instance.m_SoundManager.PlayFlipSound();
         yield return new WaitForSeconds(m_FlipTextAnimation.length);
         m_FlipUI.SetActive(false);
     }
