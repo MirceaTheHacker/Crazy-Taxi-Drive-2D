@@ -97,8 +97,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1570523, y: 1.1886972}
-  m_Size: {x: 2.09322, y: 3.6147013}
+  m_Offset: {x: -0.9491098, y: 1.0186026}
+  m_Size: {x: 4.852508, y: 5.088848}
   m_Direction: 0
 --- !u!114 &669416559
 MonoBehaviour:
@@ -148,7 +148,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.000000057037823, y: 0.0000004253459}
-  m_ConnectedAnchor: {x: 1.9200004, y: 1.41}
+  m_ConnectedAnchor: {x: 1.9199861, y: 1.41}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -167,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7328784715585335065}
   - component: {fileID: 6291651727955857741}
+  - component: {fileID: 927691230}
   m_Layer: 0
   m_Name: CarHQ
   m_TagString: Untagged
@@ -183,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 7328784715585335064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.2, y: -8.42, z: 0}
-  m_LocalScale: {x: 0.67165726, y: 0.67165726, z: 0.67165726}
+  m_LocalScale: {x: 0.20997676, y: 0.20997676, z: 0.20997676}
   m_Children:
   - {fileID: 7328784716589837043}
   m_Father: {fileID: 0}
@@ -203,6 +204,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   curHealth: 5
+--- !u!114 &927691230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328784715585335064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9d01a61c47b7d4f9721e2ec31d0147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7328784716589837047
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +231,7 @@ GameObject:
   - component: {fileID: 7328784716589837052}
   - component: {fileID: 7328784716589837054}
   - component: {fileID: 199981364}
+  - component: {fileID: 687113368}
   m_Layer: 0
   m_Name: carBody
   m_TagString: Player
@@ -400,6 +414,14 @@ CapsuleCollider2D:
   m_Offset: {x: -0.076855525, y: -1.0105158}
   m_Size: {x: 25.994995, y: 2.8627312}
   m_Direction: 1
+--- !u!81 &687113368
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328784716589837047}
+  m_Enabled: 1
 --- !u!1 &7328784716994749133
 GameObject:
   m_ObjectHideFlags: 0
