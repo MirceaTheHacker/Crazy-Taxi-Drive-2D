@@ -137,10 +137,10 @@ TextureImporter:
       name: pedalsSheet_0
       rect:
         serializedVersion: 2
-        x: 120
-        y: 118
-        width: 141
-        height: 299
+        x: 100
+        y: 120
+        width: 156
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5f0452146f945d4295e2b8b6a9dc2ab
+      spriteID: 2c70151895573b9449c9d7b2a9b6a664
       internalID: 9138399215608708986
       vertices: []
       indices: 
@@ -169,7 +169,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 346a0e7700007494d825cfb809a84d4e
+      spriteID: 1f6293e2f65f5a64d92148003bd49a17
       internalID: -5423861296214684472
       vertices: []
       indices: 
@@ -190,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edf0bc624ae8d9447a2901824a2e8bc4
+      spriteID: 7183ea33f513aa24eafd4b572ebae908
       internalID: 8103348838636566313
       vertices: []
       indices: 
@@ -200,10 +200,10 @@ TextureImporter:
       name: pedalsSheet_3
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 104
-        width: 141
-        height: 298
+        x: 1040
+        y: 115
+        width: 156
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd6d0607d6ce62941ab4616b66380311
+      spriteID: 2e801461bdcc2b542b4bf424f32769a4
       internalID: 1372729234307572713
       vertices: []
       indices: 

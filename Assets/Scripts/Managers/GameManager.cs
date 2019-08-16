@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
 
     public void PlayAgain()
     {
-        m_NitroHandler.OnResetHandler();
         m_UIManager.HideGameWinUI();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
