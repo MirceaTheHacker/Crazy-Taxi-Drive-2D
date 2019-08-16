@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     internal float m_RespawnLevel;
     internal SoundManager m_SoundManager;
     internal NitroHandler m_NitroHandler;
+    internal InputManager m_InputManager;
 
     private void Awake()
     {
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
     private void ReloadLevel()
     {
         m_NitroHandler.OnLevelReset();
+        m_InputManager.webGLmovement = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
