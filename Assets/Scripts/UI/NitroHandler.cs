@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NitroHandler : MonoBehaviour
 {
-    private Toggle m_Toggle { get { return GetComponent<Toggle>(); } }
+    internal Toggle m_Toggle { get { return GetComponent<Toggle>(); } }
 
     private void Start()
     {
@@ -19,6 +19,14 @@ public class NitroHandler : MonoBehaviour
 
     public void NitroToggle()
     {
-        GameManager.Instance.m_CarManager.m_CarController.NitroToggle();
+        if (m_Toggle.isOn)
+        {
+            GameManager.Instance.m_CarManager.m_CarController.TurnNitroOn();
+        }
+        else
+        {
+            GameManager.Instance.m_CarManager.m_CarController.TurnNitroOff();
+        }
+
     }
 }

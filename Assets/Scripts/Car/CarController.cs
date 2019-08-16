@@ -99,26 +99,14 @@ public class CarController : MonoBehaviour
     }
 
 
-    private void TurnNitroOn()
+    internal void TurnNitroOn()
     {
         currentNitroMultiplier = nitroMultiplier;
     }
 
-    private void TurnNitroOff()
+    internal void TurnNitroOff()
     {
         currentNitroMultiplier = 1f;
-    }
-
-    internal void NitroToggle()
-    {
-        if (currentNitroMultiplier == 1f)
-        {
-            TurnNitroOn();
-        }
-        else
-        {
-            TurnNitroOff();
-        }
     }
 
     private void OutOfFuel()
