@@ -39,7 +39,7 @@ public class CarManager : MonoBehaviour
     internal void Respawn()
     {
         DamagePlayer(1);
-        if (curHealth <= 0)
+        if (m_HealthManager.curHealth <= 0)
         {
             DeathHandler();
             return;
