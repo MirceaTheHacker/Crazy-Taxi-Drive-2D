@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     internal SoundManager m_SoundManager;
     internal NitroHandler m_NitroHandler;
     internal InputManager m_InputManager;
+    internal CoinManager m_CoinManager;
 
     private void Awake()
     {

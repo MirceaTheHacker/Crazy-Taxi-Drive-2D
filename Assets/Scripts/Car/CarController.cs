@@ -14,7 +14,7 @@ public class CarController : MonoBehaviour
     public bool TractionBack = true;
     //public float carRotationSpeed;
     public float fuelConsumption = 0.02f;
-    public float nitroMultiplier = 2f;
+    public float nitroMultiplier = 4f;
 
 
     internal float m_Fuel = 1f;
@@ -94,7 +94,7 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * Mathf.Sqrt(currentNitroMultiplier) * Time.fixedDeltaTime;
+        m_Fuel -= fuelConsumption * Mathf.Abs(movement) * Mathf.Pow(currentNitroMultiplier, 1.5f) * Time.fixedDeltaTime;
         GameManager.Instance.m_FuelManager.m_Image.fillAmount = m_Fuel;
     }
 
