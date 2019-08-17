@@ -9,7 +9,6 @@ public class Lava : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Lava is in contact with " + other.gameObject.tag);
         if (other.gameObject.tag == "Player")
         {
             if (!inLava)

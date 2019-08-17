@@ -7,6 +7,7 @@ public class CarManager : MonoBehaviour
     public int maxHealth;
     public int curHealth;
     public GameObject m_Character;
+    public GameObject m_CoinMagnet;
 
     internal Vector2 m_CheckPoint;
     internal HealthManager m_HealthManager;
@@ -106,6 +107,11 @@ public class CarManager : MonoBehaviour
         m_CarController.enabled = false;
         m_CarSoundFX.enabled = false;
         m_Character.SetActive(false);
+        m_CoinMagnet.SetActive(false);
+        if (m_OutOfFuelCoroutine != null)
+        {
+            StopCoroutine(m_OutOfFuelCoroutine);
+        }
     }
 
     private void CheckIfFellOff()

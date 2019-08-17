@@ -1770,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120261296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.1, y: 1.4, z: -10}
+  m_LocalPosition: {x: -161.21971, y: -11.990093, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1312767070}
@@ -7271,12 +7271,6 @@ Transform:
   m_Father: {fileID: 1190691269}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1123055131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 669416556, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1226315159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1189005291
 GameObject:
   m_ObjectHideFlags: 0
@@ -7364,15 +7358,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarHQ
       objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837043, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837043, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7328784715585335065, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.1
+      value: -168.7
       objectReference: {fileID: 0}
     - target: {fileID: 7328784715585335065, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: -12.83
       objectReference: {fileID: 0}
     - target: {fileID: 7328784715585335065, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
@@ -7419,11 +7423,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6291651727955857741, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+    - target: {fileID: 7328784716589837054, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
-      propertyPath: m_Character
-      value: 
-      objectReference: {fileID: 1123055131}
+      propertyPath: fuelConsumption
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a, type: 3}
 --- !u!1001 &1281807573
@@ -7515,7 +7519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312767069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.019999504, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 252626236}
