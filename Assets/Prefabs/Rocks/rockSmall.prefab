@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 6124950264336663053}
   m_Layer: 0
   m_Name: rockSmall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6124950264336663054
 Transform:
   m_ObjectHideFlags: 0

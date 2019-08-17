@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 3633379868985875827}
   m_Layer: 0
   m_Name: rockSmaller
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3633379868985875824
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3633379868985875825}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.77, y: 12.67, z: 6.8678}
   m_LocalScale: {x: 0.0012113304, y: 0.0012113304, z: 0.0012113304}
   m_Children: []
