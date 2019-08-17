@@ -1770,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120261296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.43, y: -11.34, z: -10}
+  m_LocalPosition: {x: -157.4, y: -12.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1312767070}
@@ -2313,7 +2313,8 @@ AudioSource:
   m_GameObject: {fileID: 705280421}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1930397044296194297, guid: 6b6245c467016fd4fab04c44e5ba978e,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 020fba005b185dd448e81257a3f0f393, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2322,12 +2323,12 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 123
   DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 15
+  MinDistance: 9.211895
+  MaxDistance: 23.543926
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2335,10 +2336,19 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.58857155
-      value: 0.9929695
-      inSlope: 0
-      outSlope: 0
+      time: 0.33333334
+      value: 1
+      inSlope: -3.0011995
+      outSlope: -3.0011995
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6666667
+      value: 0.5
+      inSlope: -0.7502999
+      outSlope: -0.7502999
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -2346,8 +2356,8 @@ AudioSource:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.6936829
-      outSlope: -1.6936829
+      inSlope: -0.33346638
+      outSlope: -0.33346638
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -7351,12 +7361,12 @@ PrefabInstance:
     - target: {fileID: 7328784715585335065, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -170.43
+      value: -167.4
       objectReference: {fileID: 0}
     - target: {fileID: 7328784715585335065, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.34
+      value: -12.1
       objectReference: {fileID: 0}
     - target: {fileID: 7328784715585335065, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
