@@ -6,6 +6,7 @@ public class CarManager : MonoBehaviour
 {
     public int maxHealth;
     public int curHealth;
+    public GameObject m_Character;
 
     internal Vector2 m_CheckPoint;
     internal HealthManager m_HealthManager;
@@ -98,6 +99,13 @@ public class CarManager : MonoBehaviour
         m_CarController.CutMovement();
         m_CarController.backwheel.useMotor = false;
         m_CarController.frontwheel.useMotor = false;
+    }
+
+    internal void DisableCarScripts()
+    {
+        m_CarController.enabled = false;
+        m_CarSoundFX.enabled = false;
+        m_Character.SetActive(false);
     }
 
     private void CheckIfFellOff()

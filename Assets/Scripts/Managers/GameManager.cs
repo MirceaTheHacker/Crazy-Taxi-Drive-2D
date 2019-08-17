@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
     private void DisableCar()
     {
         m_CarManager.StopCar();
-        m_CarManager.m_CarController.enabled = false;
-        m_CarManager.m_CarSoundFX.enabled = false;
+        m_CarManager.DisableCarScripts();
         m_CarManager.StopCoroutine(m_CarManager.m_OutOfFuelCoroutine);
         m_CarManager.enabled = false;
     }
