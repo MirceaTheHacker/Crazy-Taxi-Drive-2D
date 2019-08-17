@@ -27,6 +27,7 @@ public class MyPauseMenu : MonoBehaviour
         m_PauseMenu.SetActive(false);
         GameIsPaused = false;
         Time.timeScale = 1f;
+        GameManager.Instance.m_CarManager.m_CarSoundFX.UnmuteEngineSounds();
     }
 
     public void Pause()
@@ -34,6 +35,7 @@ public class MyPauseMenu : MonoBehaviour
         m_PauseMenu.SetActive(true);
         GameIsPaused = true;
         Time.timeScale = 0f;
+        GameManager.Instance.m_CarManager.m_CarSoundFX.MuteEngineSounds();
     }
 
     public void MainMenu()

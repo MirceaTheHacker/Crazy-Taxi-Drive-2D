@@ -25,4 +25,16 @@ public class CarSoundFX : MonoBehaviour
                 m_IdleSound.Play();
         }
     }
+
+    internal void MuteEngineSounds()
+    {
+        m_IdleSound.mute = true;
+        m_DrivingSound.mute = true;
+    }
+
+    internal void UnmuteEngineSounds()
+    {
+        m_IdleSound.mute = false;
+        m_DrivingSound.mute = false;
+    }
 }
