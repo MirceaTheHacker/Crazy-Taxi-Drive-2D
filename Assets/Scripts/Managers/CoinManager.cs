@@ -17,7 +17,7 @@ public class CoinManager : MonoBehaviour
 
     private void SetCoinsNo()
     {
-        m_Text.text = ":" + m_CoinsNo;
+        m_Text.text = " " + m_CoinsNo;
     }
 
     internal void AddCoins(int number)
