@@ -7413,21 +7413,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7328784716589837054, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
-        type: 3}
-      propertyPath: nitroMultiplier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473591187750543056, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 1.9427053
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473591187750543056, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 6.9370537
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a, type: 3}
 --- !u!1001 &1281807573
@@ -7577,74 +7562,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Offset: {x: 0, y: 0, z: 0}
   m_ApplyAfter: 1
---- !u!1 &1345760300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1345760301}
-  - component: {fileID: 1345760303}
-  - component: {fileID: 1345760302}
-  m_Layer: 0
-  m_Name: CoinMagnet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1345760301
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345760300}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 687113361}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!250 &1345760302
-PointEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345760300}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  m_ForceMagnitude: -50
-  m_ForceVariation: 0
-  m_DistanceScale: 1
-  m_ForceSource: 0
-  m_ForceTarget: 1
-  m_ForceMode: 2
-  m_Drag: 0
-  m_AngularDrag: 0
---- !u!58 &1345760303
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345760300}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 30
 --- !u!1001 &1355814954
 PrefabInstance:
   m_ObjectHideFlags: 0

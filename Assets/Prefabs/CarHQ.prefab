@@ -97,8 +97,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.9491098, y: 1.0186026}
-  m_Size: {x: 4.852508, y: 5.088848}
+  m_Offset: {x: -0.9491098, y: 1.9427053}
+  m_Size: {x: 4.852508, y: 6.9370537}
   m_Direction: 0
 --- !u!114 &669416559
 MonoBehaviour:
@@ -157,6 +157,74 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -30
     m_UpperAngle: 30
+--- !u!1 &1345760300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345760301}
+  - component: {fileID: 1345760303}
+  - component: {fileID: 1345760302}
+  m_Layer: 0
+  m_Name: CoinMagnet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1345760301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345760300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7328784716589837043}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1345760303
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345760300}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 30
+--- !u!250 &1345760302
+PointEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345760300}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ForceMagnitude: -50
+  m_ForceVariation: 0
+  m_DistanceScale: 1
+  m_ForceSource: 0
+  m_ForceTarget: 1
+  m_ForceMode: 2
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!1 &7328784715585335064
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +236,7 @@ GameObject:
   - component: {fileID: 7328784715585335065}
   - component: {fileID: 6291651727955857741}
   - component: {fileID: 927691230}
+  - component: {fileID: 240416074}
   m_Layer: 0
   m_Name: CarHQ
   m_TagString: Untagged
@@ -216,6 +285,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9d01a61c47b7d4f9721e2ec31d0147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &240416074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328784715585335064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef336e2b7de0742468fb71b18e75884f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7328784716589837047
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +336,7 @@ Transform:
   - {fileID: 7328784717147905221}
   - {fileID: 8942204644924918647}
   - {fileID: 2306325918752498077}
+  - {fileID: 1345760301}
   m_Father: {fileID: 7328784715585335065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

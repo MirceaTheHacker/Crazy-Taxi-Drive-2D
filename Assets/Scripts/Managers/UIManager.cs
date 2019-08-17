@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,54 +12,17 @@ public class UIManager : MonoBehaviour
     public AnimationClip m_CreditsAnimation;
     public AnimationClip m_FlipTextAnimation;
     public GameObject m_FlipUI;
-    public GameObject m_PauseMenu;
 
-    [HideInInspector] public static bool GameIsPaused = false;
+
+
 
     private void Start()
     {
         GameManager.Instance.m_UIManager = this;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            m_ControlUI.SetActive(false);
         }
-    }
-
-    public void Resume()
-    {
-        m_PauseMenu.SetActive(false);
-        GameIsPaused = false;
-        Time.timeScale = 1f;
-    }
-
-    public void Pause()
-    {
-        m_PauseMenu.SetActive(true);
-        GameIsPaused = true;
-        Time.timeScale = 0f;
-    }
-
-    public void MainMenu()
-    {
-        Time.timeScale = 1f;
-        Debug.Log("No main menu implemented yet :-(");
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quitting game...");
-        Application.Quit();
     }
 
     internal IEnumerator GameOver()
