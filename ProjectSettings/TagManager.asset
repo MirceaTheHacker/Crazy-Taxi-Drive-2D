@@ -8,6 +8,7 @@ TagManager:
   - Fuel
   - Wheel
   - Fire
+  - RockPlatform
   layers:
   - Default
   - TransparentFX

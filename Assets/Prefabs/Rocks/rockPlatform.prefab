@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4667124503635545876}
   m_Layer: 0
   m_Name: rockPlatform
-  m_TagString: Ground
+  m_TagString: RockPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,4 +201,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InstatiationClip: {fileID: 7400000, guid: 739f7f5c5b01a9a498d53f0feaf695b6, type: 2}
-  m_SpawnState: {fileID: 4673015894345384991}
