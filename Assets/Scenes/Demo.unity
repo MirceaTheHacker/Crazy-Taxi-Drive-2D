@@ -77484,6 +77484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParallaxFXCity
       objectReference: {fileID: 0}
+    - target: {fileID: 8366189588445692563, guid: 4f0ea1bfcffa112498c4683791a4c212,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8366189588445692560, guid: 4f0ea1bfcffa112498c4683791a4c212,
         type: 3}
       propertyPath: m_LocalPosition.x
