@@ -11,7 +11,7 @@ public class HeadColliderHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-            m_CarManager.Respawn();
+            StartCoroutine(m_CarManager.Respawn());
         }
     }
 }

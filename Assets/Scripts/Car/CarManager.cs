@@ -39,20 +39,45 @@ public class CarManager : MonoBehaviour
         CheckIfFellOff();
     }
 
-    internal void Respawn()
+    internal IEnumerator Respawn()
     {
         DamagePlayer(1);
-        if (m_HealthManager.curHealth <= 0)
+        if (m_HealthManager.curHealth > 0)
+        {
+            yield return StartCoroutine(GetGoodSpawnZone());
+            m_CarController.transform.position = m_CheckPoint;
+            m_CarController.transform.rotation = Quaternion.identity;
+            CancelVellocity();
+            m_CarController.AddFuel(1);
+            GameManager.Instance.m_SoundManager.PlayLoserSound();
+        }
+        else
         {
             DeathHandler();
-            return;
         }
-        m_CarController.transform.position = m_CheckPoint;
-        m_CarController.transform.rotation = Quaternion.identity;
-        CancelVellocity();
-        m_CarController.AddFuel(1);
-        GameManager.Instance.m_SoundManager.PlayLoserSound();
+    }
 
+    private bool SpawnZoneGood()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(m_CheckPoint, new Vector2(1, 1), 0, Vector2.down, 1);
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private IEnumerator GetGoodSpawnZone()
+    {
+        while (!SpawnZoneGood())
+        {
+            Debug.Log("Loocking for a better spot...");
+            m_CheckPoint.y += 1;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private void CancelVellocity()
@@ -91,7 +116,7 @@ public class CarManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         if (m_CarController.m_Fuel < 0)
         {
-            Respawn();
+            StartCoroutine(Respawn());
         }
     }
 

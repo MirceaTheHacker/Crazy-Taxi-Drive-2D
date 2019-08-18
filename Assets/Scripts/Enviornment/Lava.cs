@@ -44,7 +44,7 @@ public class Lava : MonoBehaviour
     private IEnumerator LavaCoroutine()
     {
         yield return new WaitForSeconds(3);
-        GameManager.Instance.m_CarManager.Respawn();
+        StartCoroutine(GameManager.Instance.m_CarManager.Respawn());
         inLava = false;
     }
 }

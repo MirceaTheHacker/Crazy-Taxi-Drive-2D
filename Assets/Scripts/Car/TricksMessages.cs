@@ -5,15 +5,11 @@ using UnityEngine;
 public class TricksMessages : MonoBehaviour
 {
     private Rigidbody2D m_CarBody { get { return GetComponentInChildren<Rigidbody2D>(); } }
+    private CarManager m_CarManager { get { return GetComponentInChildren<CarManager>(); } }
     float currentAngle;
     Coroutine m_FlippingCoroutine = null;
     bool inCoroutine = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,12 +27,20 @@ public class TricksMessages : MonoBehaviour
     {
         inCoroutine = true;
         bool flipped = false;
+        float startX = gameObject.transform.position.x;
         while (!flipped)
         {
             if (Mathf.Abs(currentAngle) == 0) break;
             if (Mathf.Abs(currentAngle) < 0.5f)
             {
-                StartCoroutine(GameManager.Instance.m_UIManager.DisplayFlip());
+                if (Mathf.Approximately(m_CarManager.m_CheckPoint.x, startX))
+                {
+                    Debug.Log("Not displaying great flip message because you died :-(");
+                }
+                else
+                {
+                    StartCoroutine(GameManager.Instance.m_UIManager.DisplayFlip());
+                }
                 break;
             }
             yield return new WaitForEndOfFrame();
