@@ -14,8 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QUIT!");
-        Application.Quit();
+        GameManager.Instance.QuitGame();
     }
 
     public void PlayClickSound()
