@@ -49,7 +49,7 @@ public class CarManager : MonoBehaviour
             m_CarController.transform.rotation = Quaternion.identity;
             CancelVellocity();
             m_CarController.AddFuel(1);
-            GameManager.Instance.m_SoundManager.PlayLoserSound();
+            GameManager.Instance.m_SoundManager.PlayGameOverSound();
         }
         else
         {

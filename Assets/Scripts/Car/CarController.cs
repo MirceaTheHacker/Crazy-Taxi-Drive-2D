@@ -12,7 +12,6 @@ public class CarController : MonoBehaviour
     public float torqueB;
     public bool TractionFront = true;
     public bool TractionBack = true;
-    //public float carRotationSpeed;
     public float fuelConsumption = 0.02f;
     public float nitroMultiplier = 4f;
 
