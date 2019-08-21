@@ -15,7 +15,6 @@ public class CarManager : MonoBehaviour
     internal CarSoundFX m_CarSoundFX { get { return GetComponentInChildren<CarSoundFX>(); } }
     internal Coroutine m_OutOfFuelCoroutine = null;
 
-
     private Rigidbody2D[] m_Rigidbodies2D { get { return GetComponentsInChildren<Rigidbody2D>(); } }
     private bool isAlive = true;
 
@@ -49,7 +48,7 @@ public class CarManager : MonoBehaviour
             m_CarController.transform.rotation = Quaternion.identity;
             CancelVellocity();
             m_CarController.AddFuel(1);
-            GameManager.Instance.m_SoundManager.PlayGameOverSound();
+            GameManager.Instance.m_SoundManager.PlayLoserSound();
         }
         else
         {

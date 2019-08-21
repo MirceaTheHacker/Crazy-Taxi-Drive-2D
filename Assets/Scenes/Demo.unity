@@ -63585,11 +63585,41 @@ PrefabInstance:
     - target: {fileID: 7328784716589837054, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
         type: 3}
       propertyPath: fuelConsumption
-      value: 0.1
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837054, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: speedF
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837054, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: speedB
+      value: -800
       objectReference: {fileID: 0}
     - target: {fileID: 117844209, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 1.9199861
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837040, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837040, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837040, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328784716589837040, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ec3ef9af61fbb4aa0ed4f76598a17a, type: 3}
