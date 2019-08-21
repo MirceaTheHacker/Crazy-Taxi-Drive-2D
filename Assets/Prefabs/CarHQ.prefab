@@ -148,7 +148,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.000000057037823, y: 0.0000004253459}
-  m_ConnectedAnchor: {x: 1.9200042, y: 1.41}
+  m_ConnectedAnchor: {x: 1.9199861, y: 1.41}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -330,7 +330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7328784716589837047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 669416557}
@@ -404,9 +404,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 30
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -480,7 +480,7 @@ MonoBehaviour:
   torqueB: 5000
   TractionFront: 1
   TractionBack: 1
-  fuelConsumption: 0.1
+  fuelConsumption: 0.03
   nitroMultiplier: 2
 --- !u!70 &199981364
 CapsuleCollider2D:
