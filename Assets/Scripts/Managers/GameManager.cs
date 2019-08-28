@@ -76,5 +76,19 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadLevel(int sceneIndex) {
+        StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
+    
+    private IEnumerator LoadAsynchronously(int sceneIndex) {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        m_UIManager.m_ControlUI.SetActive(true);
+        while(!operation.isDone) {
+            Debug.Log(operation.progress);
+
+            yield return null;
+        }
+    }
+
 
 }
