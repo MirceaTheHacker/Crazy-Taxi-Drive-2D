@@ -258,8 +258,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Maia/Desktop/Mircea/APIKeys/user.keystore
-  AndroidKeyaliasName: crazytaxidrive
+  AndroidKeystoreName: C:/Users/Maia/Desktop/Mircea/APIKeys/crazyTaxiDrive.keystore
+  AndroidKeyaliasName: crazy-taxi-drive
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
