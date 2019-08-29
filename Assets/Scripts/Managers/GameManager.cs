@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     internal NitroHandler m_NitroHandler;
     internal InputManager m_InputManager;
     internal CoinManager m_CoinManager;
-
     private void Awake()
     {
         if (Instance == null)
@@ -67,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         m_NitroHandler.OnLevelReset();
         m_InputManager.webGLmovement = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        m_UIManager.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame()
@@ -76,19 +75,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadLevel(int sceneIndex) {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
-    }
-    
-    private IEnumerator LoadAsynchronously(int sceneIndex) {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        m_UIManager.m_ControlUI.SetActive(true);
-        while(!operation.isDone) {
-            Debug.Log(operation.progress);
 
-            yield return null;
-        }
-    }
 
 
 }
