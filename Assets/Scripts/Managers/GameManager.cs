@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     internal NitroHandler m_NitroHandler;
     internal InputManager m_InputManager;
     internal CoinManager m_CoinManager;
-
     private void Awake()
     {
         if (Instance == null)
@@ -67,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         m_NitroHandler.OnLevelReset();
         m_InputManager.webGLmovement = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        m_UIManager.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame()
@@ -75,6 +74,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
+
+
 
 
 }
